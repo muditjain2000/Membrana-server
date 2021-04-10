@@ -29,7 +29,8 @@ router.post("/", [auth], async (req, res) => {
       name: genre.name
     },
     numberInStock: req.body.numberInStock,
-    dailyRentalRate: req.body.dailyRentalRate,
+    rating: req.body.rating,
+    link: req.body.link,
     publishDate: moment().toJSON()
   });
   await movie.save();
@@ -53,7 +54,8 @@ router.put("/:id", [auth], async (req, res) => {
         name: genre.name
       },
       numberInStock: req.body.numberInStock,
-      dailyRentalRate: req.body.dailyRentalRate
+      rating: req.body.rating,
+      link: req.body.link
     },
     { new: true }
   );
