@@ -10,5 +10,5 @@ module.exports = function () {
       useUnifiedTopology: true,
       useCreateIndex: true,
     })
-    .then(() => winston.info(`Connected to ${db}...`));
+    .then(() => winston.info(`Connected to Monogdb database`));
 };
