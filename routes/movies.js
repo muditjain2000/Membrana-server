@@ -28,8 +28,8 @@ router.post("/", [auth], async (req, res) => {
       _id: genre._id,
       name: genre.name
     },
-    numberInStock: req.body.numberInStock,
-    rating: req.body.rating,
+    // numberInStock: req.body.numberInStock,
+    // rating: req.body.rating,
     link: req.body.link,
     publishDate: moment().toJSON()
   });
@@ -53,8 +53,8 @@ router.put("/:id", [auth], async (req, res) => {
         _id: genre._id,
         name: genre.name
       },
-      numberInStock: req.body.numberInStock,
-      rating: req.body.rating,
+      // numberInStock: req.body.numberInStock,
+      // rating: req.body.rating,
       link: req.body.link
     },
     { new: true }

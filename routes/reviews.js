@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
     // let user = await User.findOne({ email: req.body.email });
     // if (user) return res.status(400).send("User already registered.");
   
-    let review = new Review(_.pick(req.body, ["movieId", "review", "userId","userName","movieName"]));
+    let review = new Review(_.pick(req.body, ["rating","movieId", "review", "userId","userName","movieName"]));
     // const salt = await bcrypt.genSalt(10);
     // user.password = await bcrypt.hash(user.password, salt);
     res.send(review);

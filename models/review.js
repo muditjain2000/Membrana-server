@@ -2,8 +2,13 @@ const config = require("config");
 const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const mongoose = require("mongoose");
+const number = require("joi/lib/types/number");
 
 const reviewSchema = new mongoose.Schema({
+  rating:{
+    type: Number,
+    required:true
+  },
     review: {
         type: String,
         required: true,
@@ -27,6 +32,7 @@ const Review = mongoose.model("Review", reviewSchema);
 
 function validateReview(review) {
     const schema = {
+      rating: Joi.number().required(),
       movieId: Joi.string()
         .required(),
       review: Joi.string()
